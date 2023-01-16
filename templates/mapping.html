@@ -1,0 +1,19 @@
+{% block content %}
+    <h1>{% block title %} Mappings: We found the following mappings {% endblock %}</h1>
+    <form action= "/mapping_suggestion_accept" method="post">
+  
+        {% for item in suggestion %}
+            <div class='book'>
+                <h3>{{ item }}</h3>
+                <select name={{ item }} method="GET" action="/">
+                    <option value="{{colours[0]}}" selected>{{colours[0]}}</option>
+                    {% for colour in colours[1:] %}
+                      <option value="{{colour}}">{{colour}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        {% endfor %}
+
+        <input type = "submit"/>
+    </form>
+{% endblock %}

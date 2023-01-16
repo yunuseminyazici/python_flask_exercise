@@ -1,0 +1,11 @@
+{% block content %}
+    <h1>{% block title %} Mappings: We found the following mappings {% endblock %}</h1>
+    <form action= "/mapping_suggestion_accept" method="post">
+  
+{% for key, value in mapping.items() %}
+    <p>{{ key }} is mapped to {{ value }}</p>
+{% endfor %}
+
+        <input type = "submit"/>
+    </form>
+{% endblock %}
