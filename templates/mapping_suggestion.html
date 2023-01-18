@@ -1,0 +1,13 @@
+{% block content %}
+    <h1>{% block title %} Select Mappings: {% endblock %}</h1>
+    <form action= "/mappings" method="POST">
+    {% for item in suggestion %}
+        <div class='book'>
+            <h3>{{ item['name'] }} - {{ item['node'] }}</h3>
+            <input type="checkbox" name="name" value="{{ item['name']}}">
+            <input type="hidden" name="node" value="{{ item['node'] }}">
+        </div>
+    {% endfor %}
+    <input type = "submit"/>
+    </form>
+{% endblock %}

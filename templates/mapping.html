@@ -4,8 +4,8 @@
   
         {% for item in suggestion %}
             <div class='book'>
-                <h3>{{ item }}</h3>
-                <select name={{ item }} method="GET" action="/">
+                <h3>{{ item['name'] }} - {{ item['node'] }}</h3>
+                <select name={{ item['name'] }} method="GET" action="/">
                     <option value="{{colours[0]}}" selected>{{colours[0]}}</option>
                     {% for colour in colours[1:] %}
                       <option value="{{colour}}">{{colour}}</option>
